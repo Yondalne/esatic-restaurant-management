@@ -43,8 +43,4 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
         'password' => 'hashed',
     ];
-
-    public function dishes () {
-        return $this->belongsToMany(Dish::class)->withPivot('created_at', 'qty');
-    }
 }

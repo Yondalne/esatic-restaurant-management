@@ -11,6 +11,8 @@ class Dish extends Model
 
     protected $fillable = [
         "name",
+        "description",
+        "image",
         "price" // 200f or 500f but will be registered by the user
     ];
 
@@ -18,7 +20,7 @@ class Dish extends Model
         return $this->belongsToMany(Menu::class)->withPivot('qty');
     }
 
-    public function users() {
-        return $this->belongsToMany(User::class)->withPivot('created_at', 'qty');
+    public function customers() {
+        return $this->belongsToMany(Customer::class)->withPivot('created_at', 'qty');
     }
 }
