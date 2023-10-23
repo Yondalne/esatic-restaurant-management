@@ -17,7 +17,7 @@ class DishResource extends Resource
 {
     protected static ?string $model = Dish::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
+    protected static ?string $navigationIcon = 'heroicon-m-square-2-stack';
 
     public static function form(Form $form): Form
     {
@@ -56,8 +56,7 @@ class DishResource extends Resource
                     ->options([
                         200 => "200 FCFA",
                         500 => "500 FCFA"
-                    ])
-                    ->default(200),
+                    ]),
 
             ])
             ->actions([
