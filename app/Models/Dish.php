@@ -23,4 +23,8 @@ class Dish extends Model
     public function customers() {
         return $this->belongsToMany(Customer::class)->withPivot('created_at', 'qty');
     }
+
+    public function orders() {
+        return $this->belongsToMany(Order::class);
+    }
 }

@@ -27,4 +27,8 @@ class Customer extends Authenticatable
     public function dishes () {
         return $this->belongsToMany(Dish::class)->withPivot('created_at', 'qty');
     }
+
+    public function orders() {
+        return $this->hasMany(Order::class);
+    }
 }
