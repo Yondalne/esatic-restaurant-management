@@ -10,6 +10,7 @@ class Order extends Model
     use HasFactory;
 
     protected $fillable = [
+        'code',
         'customer_id',
         'status'
     ];
@@ -19,7 +20,7 @@ class Order extends Model
     }
 
     public function dishes() {
-        return $this->belongsToMany(Dish::class);
+        return $this->belongsToMany(Dish::class, 'dish_order');
     }
 
     public function dishOrders() {

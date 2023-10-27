@@ -47,6 +47,7 @@ class OrderResource extends Resource
     {
         return $table
             ->columns([
+                TextColumn::make('code')->searchable(),
                 TextColumn::make('created_at')->dateTime('l, j M Y'),
                 IconColumn::make('status')->boolean(),
             ])
