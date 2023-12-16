@@ -39,8 +39,8 @@ Route::middleware('auth')->group(function () {
 
 Route::get("/login", function(Request $request) {
     // dd($request->email);
-    $user = User::where("email", $request->email);
-    if (empty($user)) {
+    $user = User::where("email", $request->email)->get();
+    if (empty($user->toArray())) {
         $user = User::create([$request->only('email', 'password')]);
     }
     if (Auth::attempt(['email' => $user->email, 'password' => $user->password])) {
