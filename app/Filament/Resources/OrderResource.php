@@ -22,6 +22,7 @@ use Illuminate\Database\Eloquent\SoftDeletingScope;
 
 class OrderResource extends Resource
 {
+    public static ?string $label = "Commandes";
     protected static ?string $model = Order::class;
 
     protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
@@ -48,7 +49,7 @@ class OrderResource extends Resource
         return $table
             ->columns([
                 TextColumn::make('code')->searchable(),
-                TextColumn::make('created_at')->dateTime('l, j M Y'),
+                TextColumn::make('created_at')->label("Date")->dateTime('l, j M Y'),
                 IconColumn::make('status')->boolean(),
             ])
             ->filters([

@@ -15,6 +15,7 @@ use Illuminate\Database\Eloquent\SoftDeletingScope;
 
 class DishResource extends Resource
 {
+    public static ?string $label = "Plats";
     protected static ?string $model = Dish::class;
 
     protected static ?string $navigationIcon = 'heroicon-m-square-2-stack';
@@ -24,10 +25,10 @@ class DishResource extends Resource
         return $form
             ->schema([
                 Forms\Components\TextInput::make("name")
-                    ->required()
+                    ->required()->label("Nom")
                     ->maxLength(191),
                 Forms\Components\Select::make("price")
-                    ->required()
+                    ->required()->label("Prix")
                     ->options([
                         200 => "200 FCFA",
                         500 => "500 FCFA"
@@ -49,10 +50,10 @@ class DishResource extends Resource
             ->columns([
                 Tables\Columns\ImageColumn::make('image')
                     ->disk("local"),
-                Tables\Columns\TextColumn::make('name')->searchable(),
+                Tables\Columns\TextColumn::make('name')->label('Nom')->searchable(),
             ])
             ->filters([
-                Tables\Filters\SelectFilter::make("price")
+                Tables\Filters\SelectFilter::make("price")->label('Prix')
                     ->options([
                         200 => "200 FCFA",
                         500 => "500 FCFA"

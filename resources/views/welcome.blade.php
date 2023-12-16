@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Le Sto</title>
+    <title>Restaurant ESATIC</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -35,7 +35,7 @@
 
 
             <div class="col-3" data-aos="fade-down">
-              <h1><a href="/" class="text-white h2">Le Sto</a></h1>
+              <h1><a href="/" class="text-white h2">Restaurant ESATIC</a></h1>
             </div>
 
           </div>
@@ -61,7 +61,7 @@
 
       <footer style="position: absolute; bottom: 0; left: 0; width: 100%; text-align: center; color: white; font-family: 'Jost'; background-color: rgba(0,0,0,0.7); display: flex; align-items:center; justify-content: center;">
         <div style="height: fit-content; width: fit-content; margin-top: 20px">
-            <p>Developpé par KASSE MATHILDE, <a href="https://github.com/Yondalne/" target="_blank">Yondalne</a>, KONE LAMINE M2 SIGL</p>
+            <p>Developpé par <a href="https://github.com/Yondalne/" target="_blank">Yondalne</a></p>
         </div>
       </footer>
     </div>

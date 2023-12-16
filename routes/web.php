@@ -2,6 +2,8 @@
 
 use App\Http\Controllers\Controller;
 use App\Http\Controllers\ProfileController;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -32,4 +34,13 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-require __DIR__.'/auth.php';
+// require __DIR__.'/auth.php';
+
+Route::get("/login", function(Request $request) {
+    // dd($request->email);
+    if (Auth::attempt($request->only('email', 'password'))) {
+        return redirect("/admin");
+    }
+    return redirect("/admin/login");
+});
+

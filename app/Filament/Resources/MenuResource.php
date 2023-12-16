@@ -29,7 +29,7 @@ class MenuResource extends Resource
             ->schema([
                 Forms\Components\DatePicker::make("date")
                     ->required(),
-                Forms\Components\Select::make("period")
+                Forms\Components\Select::make("period")->label('Periode')
                     ->required()
                     ->options([
                         'AM' => "Matin",
@@ -50,10 +50,10 @@ class MenuResource extends Resource
         return $table
             ->columns([
                 Tables\Columns\TextColumn::make('date')->date("l, j M Y"),
-                Tables\Columns\TextColumn::make('period'),
+                Tables\Columns\TextColumn::make('period')->label('Periode'),
             ])
             ->filters([
-                Tables\Filters\SelectFilter::make("Period")
+                Tables\Filters\SelectFilter::make("Period")->label('Periode')
                     ->options([
                         'AM' => "Matin",
                         'PM' => "Soir"
