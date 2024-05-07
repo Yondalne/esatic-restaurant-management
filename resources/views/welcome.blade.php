@@ -35,8 +35,16 @@
 
 
             <div class="col-3" data-aos="fade-down">
-              <h1><a href="/" class="text-white h2">Restaurant ESATIC</a></h1>
-            </div>
+                <h1><a href="http://localhost:8085/Hospital_Management/" class="text-white h2">Acceuil</a></h1>
+              </div>
+
+              <div class="col-3" data-aos="fade-down">
+                <h1><a href="/" class="text-white h2">Restaurant</a></h1>
+              </div>
+
+              <div class="col-3" data-aos="fade-down">
+                  <span><a href="http://localhost:5173" class="text-white h2">Bibliotheque</a></span>
+              </div>
 
           </div>
         </div>
@@ -59,11 +67,11 @@
 
 
 
-      <footer style="position: absolute; bottom: 0; left: 0; width: 100%; text-align: center; color: white; font-family: 'Jost'; background-color: rgba(0,0,0,0.7); display: flex; align-items:center; justify-content: center;">
+      {{-- <footer style="position: absolute; bottom: 0; left: 0; width: 100%; text-align: center; color: white; font-family: 'Jost'; background-color: rgba(0,0,0,0.7); display: flex; align-items:center; justify-content: center;">
         <div style="height: fit-content; width: fit-content; margin-top: 20px">
             <p>Developpé par <a href="https://github.com/Yondalne/" target="_blank">Yondalne</a></p>
         </div>
-      </footer>
+      </footer> --}}
     </div>
 
     @if (!empty(Session::get('success')))

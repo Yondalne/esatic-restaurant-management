@@ -35,13 +35,23 @@
 
 
             <div class="col-3" data-aos="fade-down">
-              <h1><a href="/" class="text-white h2">Restaurant ESATIC</a></h1>
+              <h1><a href="http://localhost:8085/Hospital_Management/" class="text-white h2">Acceuil</a></h1>
+            </div>
+
+            <div class="col-3" data-aos="fade-down">
+              <h1><a href="/" class="text-white h2">Restaurant</a></h1>
+            </div>
+
+            <div class="col-3" data-aos="fade-down">
+                <span><a href="http://localhost:5173" class="text-white h2" id="linkBiblio">Bibliotheque</a></span>
             </div>
 
           </div>
         </div>
 
-      </header>
+
+    </header>
+    @dd( request()->route()->getName() )
 
       <div class="site-blocks-cover overlay" style="background-image: url(images/hero_bg_1.jpg);" data-aos="fade" data-stellar-background-ratio="0.5">
         <div class="container">
@@ -119,11 +129,11 @@
 
     </div>
 
-    <footer style="position: sticky; bottom: 0; left: 0; width: 100%; text-align: center; color: white; font-family: 'Jost'; background-color: rgba(0,0,0,0.7); display: flex; align-items:center; justify-content: center;">
+    {{-- <footer style="position: sticky; bottom: 0; left: 0; width: 100%; text-align: center; color: white; font-family: 'Jost'; background-color: rgba(0,0,0,0.7); display: flex; align-items:center; justify-content: center;">
         <div style="height: fit-content; width: fit-content; margin-top: 20px">
             <p>Developpé par <a href="https://github.com/Yondalne/" target="_blank">Yondalne</a></p>
         </div>
-    </footer>
+    </footer> --}}
 
     <script src="/js/jquery-3.3.1.min.js"></script>
     <script src="/js/jquery-migrate-3.0.1.min.js"></script>
@@ -139,7 +149,12 @@
     <script src="/js/mediaelement-and-player.min.js"></script>
 
     <script>
-      document.addEventListener('DOMContentLoaded', function() {
+        linkBiblio.addEventListener("click", function(event) {
+            event.preventDefault();
+            linkBiblio.classList.add("text-red");
+        })
+
+        document.addEventListener('DOMContentLoaded', function() {
                 var mediaElements = document.querySelectorAll('video, audio'), total = mediaElements.length;
 
                 for (var i = 0; i < total; i++) {
